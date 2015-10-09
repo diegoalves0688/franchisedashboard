@@ -30,7 +30,7 @@ if(in_array($_POST['email'], $allowed)){
 
     echo '<div id="donutchart" style="width: 700px; height: 300px;"></div>';
 
-    echo '<div id="table_div" style="width: 500px; height: 300px;"></div>';
+    echo '<div id="table_div" style="width: 700px; height: 300px;"></div>';
 
     $data_inicio = $_POST['data-inicio'];
     $datas_inicio = explode("-", $data_inicio);
@@ -98,15 +98,18 @@ if(in_array($_POST['email'], $allowed)){
 
           function drawTable() {
               var data = new google.visualization.DataTable();
+              data.addColumn('string', 'Numero pedido');
+              data.addColumn('string', 'Data');
               data.addColumn('string', 'Nome do cliente');
               data.addColumn('number', 'Total pedido');
+              data.addColumn('string', 'Status');
             data.addRows([
             ";
 
             foreach ($datareceived->list as &$item) {
-                echo "['".$item->clientName."', {v:". $item->totalValue.", f: 'R$".substr_replace($item->totalValue,',',-2,0)."'}],";
+                echo "['".$item->orderId."','".substr($item->creationDate, 0, -17)."','".$item->clientName."', {v:". $item->totalValue.", f: 'R$".substr_replace($item->totalValue,',',-2,0)."'},'".$item->status."'],";
             }
-            echo "['Soma dos pedidos', {v:". $item->totalValue.", f: 'R$".substr_replace($datareceived->stats->stats->totalValue->Sum,',',-2,0)."'}],";
+            echo "['','','Soma dos pedidos', {v:". $item->totalValue.", f: 'R$".substr_replace($datareceived->stats->stats->totalValue->Sum,',',-2,0)."'},''],";
             echo "
             ]);
 

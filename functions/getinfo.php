@@ -22,6 +22,10 @@ $applicationKey = $_POST['password'];
 
 $allowed = array("diego.alves@vtex.com.br", "usuario@vtex.com.br");
 
+if($_POST['utm']==""){
+    exit("Favor preencher a utm_source");
+}
+
 if(in_array($_POST['email'], $allowed)){
 
     echo '<div id="donutchart" style="width: 700px; height: 300px;"></div>';
@@ -46,7 +50,7 @@ if(in_array($_POST['email'], $allowed)){
     $utm = $_POST['utm'];
 
 
-    $url = 'http://'.$accountname.'.vtexcommercestable.com.br/api/oms/pvt/orders/?f_UtmSource='.$utm.'&f_authorizedDate=authorizedDate:%5B'.$ano_incio.'-'.$mes_inicio.'-'.$dia_inicio.'T03:00:00.000Z+TO+'.$ano_fim.'-'.$mes_fim.'-'.$dia_fim.'T02:59:59.999Z%5D';
+    $url = 'http://'.$accountname.'.vtexcommercestable.com.br/api/oms/pvt/orders/?f_UtmSource='.$utm.'&f_creationDate=creationDate:%5B'.$ano_incio.'-'.$mes_inicio.'-'.$dia_inicio.'T03:00:00.000Z+TO+'.$ano_fim.'-'.$mes_fim.'-'.$dia_fim.'T02:59:59.999Z%5D';
 
     $headers = array(
         'http' => array(

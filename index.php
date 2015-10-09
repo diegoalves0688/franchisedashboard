@@ -7,6 +7,7 @@
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
 <div class="pen-title">
@@ -21,12 +22,12 @@
             <input type="text" name="accountname" placeholder="Account Name"/>
             <input type="text" name="email" placeholder="E-mail"/>
             <input type="password" name="password" placeholder="Senha"/>
-            <input type="text" name="utm" placeholder="UTM_SOURCE"/>
+            <input type="text" id="utm" name="utm" placeholder="UTM_SOURCE"/>
             <p>Data início:</p>
             <input type="date" name="data-inicio" placeholder="Data inicio"/>
             <p>Data fim:</p>
             <input type="date" name="data-fim" placeholder="Data fim"/>
-            <input type="submit" value="Logar">
+            <input type="submit" value="Logar" id="enviar">
         </form>
     </div>
     <div class="cta"><a href="#">Documentação de ajuda</a></div>
@@ -36,5 +37,9 @@
 </html>
 
 <script type="text/javascript">
-
+    jQuery("#enviar").hover(function() {
+        if(jQuery("#utm").val()==""){
+            alert("Preencha a utm");
+        }
+    });
 </script>

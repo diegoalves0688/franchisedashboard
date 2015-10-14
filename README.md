@@ -10,6 +10,7 @@ Se você tem uma loja VTEX e usa UTM_SOURCE para identificar vendas provenientes
 2 - Fácil instalação no template do seu site.<br>
 3 - Projeto OpenSource.<br>
 4 - Dashboard simples, com informações diretas.<br>
+5 - Visualização das vendas por período.<br>
 
 #Pré-requisitos:
 

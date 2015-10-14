@@ -15,6 +15,7 @@ Se você tem uma loja VTEX e usa UTM_SOURCE para identificar vendas provenientes
 
 1 - Criar um email para seus parceiros (Ex: parceiro@minhaloja.com.br).<br>
 2 - Utilizar UTM_SOURCE para identificar as vendas provenientes de parceiros.
+3 - Não utilizar o Internet Explorer.
 
 #Criando acesso:
 

@@ -20,7 +20,7 @@ Se você tem uma loja VTEX e usa UTM_SOURCE para identificar vendas provenientes
 
 1º passo - Crie um perfil no seu License Manager da VTEX, liberando acesso ao OMS apenas para visualização.<br>
 2º passo - Ainda no License Manager, crie um usuário para sua loja (Ex: parceiro@minhaloja.com) informando o perfil feito no passo anterior.<br>
-3º passo - Acesse o OMS pela url abaixo, usando o email que você acabou de criar (altere o "minhaloja" para o seu endereço":
+3º passo - Acesse o OMS pela url abaixo, usando o email que você acabou de criar (altere o "minhaloja" para o seu endereço"):
 
 http://minhaloja.vtexcommercestable.com.br/admin/checkout
 

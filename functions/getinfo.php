@@ -28,7 +28,7 @@ if($_POST['utm']==""){
 
 if(in_array($_POST['email'], $allowed)){
 
-    echo '<div id="donutchart" style="width: 700px; height: 300px;"></div>';
+    echo '<div id="donutchart" style="width: 800px; height: 300px;"></div>';
 
     echo '<div id="table_div" style="width: 700px; height: 300px;"></div>';
 
@@ -83,7 +83,7 @@ if(in_array($_POST['email'], $allowed)){
         ]);
 
         var options = {
-            title: '".$utm." - De: ".$dia_inicio."/".$mes_inicio."/".$ano_incio." a ".$dia_fim."/".$mes_fim."/".$ano_fim." - Total em vendas: R$".substr_replace($datareceived->stats->stats->totalValue->Sum,',',-2,0) ."',
+            title: 'UTM: ".$utm." - período de: ".$dia_inicio."/".$mes_inicio."/".$ano_incio." a ".$dia_fim."/".$mes_fim."/".$ano_fim." - Total em vendas: R$".substr_replace($datareceived->stats->stats->totalValue->Sum,',',-2,0) ."',
             pieHole: 0.4
         };
 

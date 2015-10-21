@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div class="login"></div>
+<script type="text/javascript">
+$.getScript( "https://www.google.com/jsapi", function( data, textStatus, jqxhr ) {
+    console.log( data ); // Data returned
+    console.log( textStatus ); // Success
+    console.log( jqxhr.status ); // 200
+    console.log( "Load was performed." );
+});
+ $( ".login" ).append( "<p><input type='text' class='usuario' placeholder='Usuario'></p><p><input type='password' class='senha' placeholder='Senha'></p><p><input type='text' class='utm' placeholder='UTM_SOURCE'></p><input type='button' value='Logar' class='botao'>" );
+ $( ".botao" ).click(function() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://'+window.location.host+'/api/oms/pvt/orders/?f_UtmSource='+$(".utm").val(),
+        headers: {
+            "X-VTEX-API-AppKey":$(".usuario").val(),
+            "X-VTEX-API-AppToken":$(".senha").val()
+        }
+    }).done(function(data) {
+                alert(JSON.stringify(data));
+            });
+ });
+</script>
+</body>
+</html>
